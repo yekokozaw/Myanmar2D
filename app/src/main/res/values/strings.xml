@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Market</string>
+    <string name="tvSet">SET</string>
+    <string name="twelve_one_minute">12:01 PM</string>
+    <string name="tv_set">SET</string>
+    <string name="tvValue">Value</string>
+    <string name="tv_four_30">4:30 PM</string>
+</resources>

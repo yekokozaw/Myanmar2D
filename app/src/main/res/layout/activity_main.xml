@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/appBarMain"
+        layout="@layout/layout_app_bar_main"/>
+
+    <TextView
+        android:id="@+id/tvLiveTwoD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="_ _"
+        android:layout_below="@id/appBarMain"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/text_big_2x"
+        android:layout_marginTop="@dimen/margin_medium_2"/>
+
+    <LinearLayout
+        android:id="@+id/llLive"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/tvLiveTwoD"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCheckLoading"
+            android:layout_width="20dp"
+            android:layout_height="17dp"
+            android:src="@drawable/stopwatch"
+            android:layout_marginEnd="@dimen/margin_small"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCheckUpdated"
+            android:layout_width="20dp"
+            android:layout_height="17dp"
+            android:visibility="gone"
+            android:src="@drawable/check"
+            android:layout_marginEnd="@dimen/margin_small"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUpdatedDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2023-11-17"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialMorning"
+        android:layout_width="match_parent"
+        android:layout_below="@id/llLive"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        app:strokeWidth="1dp"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_card_medium_2"
+        android:layout_height="120dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#d9143b">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvmorning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/twelve_one_minute"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/text_regular_3x"/>
+
+            <FrameLayout
+                android:id="@+id/flLine"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/margin_medium_3"
+                android:layout_marginEnd="@dimen/margin_medium_3"
+                android:layout_below="@id/tvmorning"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_set"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="@dimen/text_small"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_below="@id/flLine"
+                android:layout_marginStart="@dimen/text_small"
+                android:layout_alignStart="@id/tvSetMorning"/>
+
+            <TextView
+                android:id="@+id/tvSetMorning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   _ _   "
+                android:layout_marginStart="40dp"
+                android:textColor="@color/white"
+                android:letterSpacing="0.02"
+                android:layout_marginTop="40dp"
+                android:textSize="@dimen/text_regular_2x"
+                android:layout_below="@id/tvmorning"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvValue"
+                android:textColor="@color/secondaryTextColor"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textSize="@dimen/text_small"
+                android:layout_below="@id/flLine"
+                android:layout_marginStart="@dimen/text_small"
+                android:layout_alignStart="@id/tvValueMorning"/>
+
+            <TextView
+                android:id="@+id/tvValueMorning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    _ _   "
+                android:textColor="@color/white"
+                android:letterSpacing="0.02"
+                android:layout_marginStart="40dp"
+                android:layout_alignTop="@id/tvSetMorning"
+                android:layout_toEndOf="@id/tvSetMorning"
+                android:textSize="@dimen/text_regular_2x"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFinalResultMorning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="_ _"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/flLine"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_medium_2"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_below="@id/materialMorning"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        app:strokeWidth="1dp"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_card_medium_2"
+        android:layout_height="120dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#d9143b">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEvening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_four_30"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/text_regular_3x"/>
+
+            <FrameLayout
+                android:id="@+id/flLine2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/margin_medium_3"
+                android:layout_marginEnd="@dimen/margin_medium_3"
+                android:layout_below="@id/tvEvening"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_set"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="@dimen/text_small"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_below="@id/flLine2"
+                android:layout_marginStart="@dimen/text_small"
+                android:layout_alignStart="@id/tvSetEvening"/>
+
+            <TextView
+                android:id="@+id/tvSetEvening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    _ _   "
+                android:layout_marginStart="40dp"
+                android:textColor="@color/white"
+                android:letterSpacing="0.02"
+                android:layout_marginTop="40dp"
+                android:textSize="@dimen/text_regular_2x"
+                android:layout_below="@id/tvEvening"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvValue"
+                android:textColor="@color/secondaryTextColor"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textSize="@dimen/text_small"
+                android:layout_below="@id/flLine2"
+                android:layout_marginStart="@dimen/text_small"
+                android:layout_alignStart="@id/tvValueEvening"/>
+
+            <TextView
+                android:id="@+id/tvValueEvening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    _ _   "
+                android:textColor="@color/white"
+                android:letterSpacing="0.02"
+                android:layout_marginStart="40dp"
+                android:layout_alignTop="@id/tvSetEvening"
+                android:layout_toEndOf="@id/tvSetEvening"
+                android:textSize="@dimen/text_regular_2x"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFinalResultEvening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="_ _"
+                android:textStyle="bold"
+                android:textSize="33sp"
+                android:layout_alignParentEnd="true"
+                android:textColor="@android:color/holo_blue_dark"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:layout_below="@id/flLine2"
+                android:layout_marginTop="@dimen/margin_medium_2"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>
